@@ -9,3 +9,10 @@ fifa_df_germany_age = spark.sql(query)
 
 # Generate basic statistics
 fifa_df_germany_age.describe().show()
+
+# Convert fifa_df to fifa_df_germany_age_pandas DataFrame
+fifa_df_germany_age_pandas = fifa_df_germany_age.toPandas()
+
+# Plot the 'Age' density of Germany Players
+fifa_df_germany_age_pandas.plot(kind='density')
+plt.show()
